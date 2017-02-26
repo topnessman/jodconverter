@@ -28,7 +28,7 @@ import org.artofsolving.jodconverter.office.DefaultOfficeManagerConfiguration;
 import org.testng.annotations.Test;
 
 @Test(groups="functional")
-public class OfficeDocumentConverterFunctionalTest {
+public class OfficeDocumentConverterFileTest {
 
     public void runAllPossibleConversions() throws IOException {
         OfficeManager officeManager = new DefaultOfficeManagerConfiguration().buildOfficeManager();

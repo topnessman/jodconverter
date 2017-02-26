@@ -26,10 +26,10 @@ public class DefaultDocumentFormatRegistry extends SimpleDocumentFormatRegistry 
 		pdf.setStoreProperties(DocumentFamily.DRAWING, Collections.singletonMap("FilterName", "draw_pdf_Export"));
 		addFormat(pdf);
 		
-		DocumentFormat swf = new DocumentFormat("Macromedia Flash", "swf", "application/x-shockwave-flash");
+		/*DocumentFormat swf = new DocumentFormat("Macromedia Flash", "swf", "application/x-shockwave-flash");
 		swf.setStoreProperties(DocumentFamily.PRESENTATION, Collections.singletonMap("FilterName", "impress_flash_Export"));
 		swf.setStoreProperties(DocumentFamily.DRAWING, Collections.singletonMap("FilterName", "draw_flash_Export"));
-		addFormat(swf);
+		addFormat(swf);*/
 		
 		// disabled because it's not always available
 		//DocumentFormat xhtml = new DocumentFormat("XHTML", "xhtml", "application/xhtml+xml");
@@ -52,10 +52,10 @@ public class DefaultDocumentFormatRegistry extends SimpleDocumentFormatRegistry 
 		odt.setStoreProperties(DocumentFamily.TEXT, Collections.singletonMap("FilterName", "writer8"));
 		addFormat(odt);
 
-		DocumentFormat sxw = new DocumentFormat("OpenOffice.org 1.0 Text Document", "sxw", "application/vnd.sun.xml.writer");
+		/*DocumentFormat sxw = new DocumentFormat("OpenOffice.org 1.0 Text Document", "sxw", "application/vnd.sun.xml.writer");
 		sxw.setInputFamily(DocumentFamily.TEXT);
 		sxw.setStoreProperties(DocumentFamily.TEXT, Collections.singletonMap("FilterName", "StarOffice XML (Writer)"));
-		addFormat(sxw);
+		addFormat(sxw);*/
 
 		DocumentFormat doc = new DocumentFormat("Microsoft Word", "doc", "application/msword");
 		doc.setInputFamily(DocumentFamily.TEXT);
@@ -71,9 +71,9 @@ public class DefaultDocumentFormatRegistry extends SimpleDocumentFormatRegistry 
 		rtf.setStoreProperties(DocumentFamily.TEXT, Collections.singletonMap("FilterName", "Rich Text Format"));
 		addFormat(rtf);
 
-		DocumentFormat wpd = new DocumentFormat("WordPerfect", "wpd", "application/wordperfect");
+		/*DocumentFormat wpd = new DocumentFormat("WordPerfect", "wpd", "application/wordperfect");
 		wpd.setInputFamily(DocumentFamily.TEXT);
-		addFormat(wpd);
+		addFormat(wpd);*/
 
 		DocumentFormat txt = new DocumentFormat("Plain Text", "txt", "text/plain");
 		txt.setInputFamily(DocumentFamily.TEXT);
@@ -84,7 +84,7 @@ public class DefaultDocumentFormatRegistry extends SimpleDocumentFormatRegistry 
 		txt.setStoreProperties(DocumentFamily.TEXT, txtLoadAndStoreProperties);
 		addFormat(txt);
 
-        DocumentFormat wikitext = new DocumentFormat("MediaWiki wikitext", "wiki", "text/x-wiki");
+        /*DocumentFormat wikitext = new DocumentFormat("MediaWiki wikitext", "wiki", "text/x-wiki");
         wikitext.setStoreProperties(DocumentFamily.TEXT, Collections.singletonMap("FilterName", "MediaWiki"));
         //addFormat(wikitext);
 		
@@ -151,7 +151,7 @@ public class DefaultDocumentFormatRegistry extends SimpleDocumentFormatRegistry 
         
         DocumentFormat svg = new DocumentFormat("Scalable Vector Graphics", "svg", "image/svg+xml");
         svg.setStoreProperties(DocumentFamily.DRAWING, Collections.singletonMap("FilterName", "draw_svg_Export"));
-        addFormat(svg);
+        addFormat(svg);*/
   	}
 
 }

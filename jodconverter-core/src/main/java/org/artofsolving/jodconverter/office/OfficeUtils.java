@@ -23,6 +23,7 @@ import com.sun.star.uno.UnoRuntime;
 public class OfficeUtils {
 
     public static final String SERVICE_DESKTOP = "com.sun.star.frame.Desktop";
+    public static final String URL_STREAM = "private:stream";
 
     private OfficeUtils() {
         throw new AssertionError("utility class must not be instantiated");
@@ -85,9 +86,29 @@ public class OfficeUtils {
                 "/opt/openoffice.org3",
                 "/opt/libreoffice",
                 "/usr/lib/openoffice",
-                "/usr/lib/libreoffice"
+                "/usr/lib/libreoffice",
+                    findOfficeHomeInUserHome()
             );
         }
+    }
+
+    private static String findOfficeHomeInUserHome() {
+        String parentPath = System.getProperty("user.home") + "/libreoffice/opt/";
+        File parentDirectory = new File(parentPath);
+        if (parentDirectory.exists()) {
+            String[] childPaths = parentDirectory.list();
+            for (String childPath : childPaths) {
+                if (childPath.startsWith("libreoffice")) {
+                    String officeHomeCandidatePath = parentPath + childPath;
+                    if (new File(officeHomeCandidatePath).isDirectory()) {
+                        return officeHomeCandidatePath;
+                    } else {
+                        continue;
+                    }
+                }
+            }
+        }
+        return "";
     }
 
     private static File findOfficeHome(String... knownPaths) {
